@@ -91,6 +91,11 @@
   (action
    (run %{bin:dream_eml} %{deps} --workspace %{workspace_root})))
  (rule
+  (targets platform.ml)
+  (deps platform.eml)
+  (action
+   (run %{bin:dream_eml} %{deps} --workspace %{workspace_root})))
+ (rule
   (targets opportunities.ml)
   (deps opportunities.eml)
   (action
@@ -181,10 +186,5 @@
  (rule
   (targets icons.ml)
   (deps icons.eml)
-  (action
-   (run %{bin:dream_eml} %{deps} --workspace %{workspace_root})))
- (rule
-  (targets curated_resources.ml)
-  (deps curated_resources.eml)
   (action
    (run %{bin:dream_eml} %{deps} --workspace %{workspace_root}))))
